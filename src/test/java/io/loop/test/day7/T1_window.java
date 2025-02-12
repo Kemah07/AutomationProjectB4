@@ -23,6 +23,7 @@ public class T1_window extends TestBase {
     @Test
     public void testWindow() {
         driver.get("http://the-internet.herokuapp.com/windows");
+
         assertEquals(driver.getTitle(), "The Internet", "Results are NOT matching");
 
         System.out.println(driver.getWindowHandles() + ": this is windows's unique ID");
@@ -36,6 +37,7 @@ public class T1_window extends TestBase {
 
         //here I get the original window handle and assign it to String
         String originalWindow = driver.getWindowHandle();
+        //driver.switchTo().window(originalWindow);
         // here i get all window handles
         Set<String> windowHandles = driver.getWindowHandles(); //the windowHandles is that element that will allow to jump from one window to the next one
 

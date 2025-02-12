@@ -18,6 +18,7 @@ public class T0_radioButton {
         WebDriver driver = WebDriverUtil.getDriver(GeneralConstants.BROWSER);
         driver.manage().window().maximize();
         driver.get("https://loopcamp.vercel.app/radio-buttons.html");
+
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); //selenium 3
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  //slenium 4
