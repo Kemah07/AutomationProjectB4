@@ -52,12 +52,15 @@ public class Driver {
 
     /**
      * closing driver
-     * @author nadir
+     * @author Kanan
      */
     public static void closeDriver(){
         if(driver !=null){
             driver.quit();
             driver = null;
+
+            // doesnt it automatically become null after quit? - if it is not set back to null, once getDriver is called, it will use the driver's last reference. thus, it is crutical to set it back to null
+
         }
     }
 }

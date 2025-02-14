@@ -1,7 +1,14 @@
 package io.loop.test.day2;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class SeleniumTest {
 
@@ -38,6 +45,16 @@ public class SeleniumTest {
         // quitting the browser
 
         driver.quit();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        try {
+            WebElement dynamicElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("search")));
+            dynamicElement.click();
+        }
+        catch (TimeoutException e) {
+            System.out.println("Eelment not found within the specified time");
+        }
+
     }
 
 
